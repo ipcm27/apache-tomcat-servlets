@@ -11,6 +11,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-Empresa  <%= nomeEmpresa %> a cadastrada com sucesso
+Empresa  ${ nomeEmpresa } a cadastrada com sucesso
 </body>
 </html>
