@@ -26,10 +26,10 @@ public class NovaEmpresaServlet extends HttpServlet {
 		
 		
 		Banco banco = new Banco();
-		banco.adiciona(empresa);
+		banco.adicionar(empresa);
 		
 		PrintWriter out = response.getWriter();
-		out.println("<html></body>Empresa" + nomeEmpresa + "cadastrada com sucesso</boyd></html>");
+		
 	}
 
 }

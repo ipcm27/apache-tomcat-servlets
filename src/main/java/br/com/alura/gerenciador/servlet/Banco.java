@@ -15,7 +15,7 @@ public class Banco {
 		lista.add(empresa1);
 	}
 
-	public void adiciona(Empresa empresa) {
+	public void adicionar(Empresa empresa) {
 		Banco.lista.add(empresa);
 	}
 	
