@@ -19,11 +19,11 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/novaEmpresa")
 public class NovaEmpresaServlet extends HttpServlet {
 	
-	private static final long serialVersionUID = 1L;
+private static final long serialVersionUID = 1L;
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-		System.out.println("Cadastrando nova empresa");
+		System.out.println("Teste 1234");
 		
 		String nomeEmpresa = request.getParameter("nome");
 		String paramDataEmpresa = request.getParameter("data");
@@ -43,10 +43,12 @@ public class NovaEmpresaServlet extends HttpServlet {
 		Banco banco = new Banco();
 		banco.adiciona(empresa);
 		
-		//chamar o JPS
-		RequestDispatcher rd = request.getRequestDispatcher("/novaEmpresaCriada.jsp");
-		request.setAttribute("empresa", empresa.getNome());
-		rd.forward(request, response);
+		response.sendRedirect("listaEmpresas");
+		
+//		//chamar o JPS
+//		RequestDispatcher rd = request.getRequestDispatcher("/listaEmpresas");
+//		request.setAttribute("empresa", empresa.getNome());
+//		rd.forward(request, response);
 	}
 
 }
