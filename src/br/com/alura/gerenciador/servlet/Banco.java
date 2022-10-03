@@ -25,12 +25,12 @@ public class Banco {
 		Banco.lista.add(empresa);
 	}
 	
+	
+	
 	public void removeEmpresa(Integer id) {
-		
 		
 //		Utiliza esse interface para editar uma lista enqunato eprcorre ela
 		Iterator<Empresa> it = lista.iterator();
-		
 		
 		
 		while(it.hasNext()) {
@@ -47,6 +47,20 @@ public class Banco {
 	
 	public List<Empresa> getEmpresas(){
 		return Banco.lista;
+	}
+
+	
+
+	public Empresa buscaEmpresaPorId(Integer id) {
+		
+		for (Empresa empresa : lista) {
+			if(empresa.getId() == id) {
+				return empresa;
+			}
+			
+		}
+		 return null; 
+		
 	}
 
 }

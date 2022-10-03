@@ -8,26 +8,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class RemoveEmpresaServlet
+ * Servlet implementation class MostraEmpresaServlet
  */
-@WebServlet("/RemoveEmpresa")
-public class RemoveEmpresaServlet extends HttpServlet {
+@WebServlet(name = "MostraEmpresa", urlPatterns = { "/MostraEmpresa" })
+public class MostraEmpresaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-   
-	
+  
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+		
 		String paramId = request.getParameter("id");
 		Integer id = Integer.parseInt(paramId);
 		
 		Banco banco = new Banco();
-		banco.removeEmpresa(id);
-		
-		response.sendRedirect("listaEmpresas");
+		banco.buscaEmpresaPorId(id);
 		
 	}
 
 	
-	
-
 }
