@@ -7,18 +7,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class RemoveEmpresaServlet
- */
-@WebServlet("/RemoveEmpresa")
+@WebServlet("/removeEmpresa")
 public class RemoveEmpresaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-   
+
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+		
 		String paramId = request.getParameter("id");
-		Integer id = Integer.parseInt(paramId);
+		Integer id = Integer.valueOf(paramId);
+		
+		System.out.println(id);
 		
 		Banco banco = new Banco();
 		banco.removeEmpresa(id);
@@ -26,8 +25,5 @@ public class RemoveEmpresaServlet extends HttpServlet {
 		response.sendRedirect("listaEmpresas");
 		
 	}
-
-	
-	
 
 }
